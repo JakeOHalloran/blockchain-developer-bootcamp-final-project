@@ -1,0 +1,852 @@
+
+* {
+  margin:0;
+  padding:0;
+
+    word-wrap: break-word;
+  
+  }
+
+
+.main-section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.section-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+  -webkit-filter: brightness(0.8);
+	filter: brightness(0.8);
+    -moz-filter: brightness(0.8);
+    -o-filter: brightness(0.8);
+    -ms-filter: brightness(0.8);
+    top: 0;
+}
+
+.nav-section {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 100px;
+}
+
+.navbar {
+  font-family: 'Poppins', sans-serif;
+  padding-top: 15px;
+}
+
+.nav-links-section {
+  position: relative;
+  padding-right: 8%;
+  cursor: default;
+  float: right;
+}
+
+.wallet {
+  display: inline-block;
+  margin: 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  padding: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border: 2px solid white;
+  border-radius: 8px;
+  transition: all .3s;
+}
+
+.wallet:hover {
+  background-color: #F02051;
+  border: 2px solid #F02051;
+}
+
+.wallet-connected-wrapper {
+  display: inline-block;
+  margin: 20px;
+  margin-top: 20px;
+  padding: 7px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 8px;
+  border: 2px solid white;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+.fa-wallet {
+  display: inline-block;
+  margin-right: 10px;
+  color: white;
+  font-size: 18px;
+}
+
+.account {
+  display: inline-block;
+  color: white;
+  font-size: 16px;
+}
+
+@media (max-width: 1024px) {
+  
+  .wallet {
+    margin: 10px;
+    margin-top: 22px;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .wallet-connected-wrapper {
+    display: inline-block;
+    margin: 10px;
+    margin-top: 22px;
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .fa-wallet {
+    margin-right: 10px;
+    font-size: 17px;
+  }
+  
+  .account {
+    font-size: 15px;
+  }
+  
+}
+
+
+
+
+
+
+
+#popup-wrapper {
+  position: fixed;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.644); /* Black w/ opacity */
+  display: none;
+}
+
+.popup {
+  visibility: hidden;
+  padding: 30px;
+  width: auto;
+  height: auto;
+  position: absolute;
+  background-color: rgba(60, 10, 111, 1);
+  z-index: 10;
+  left: 50%;                  
+	top: 50%;
+  transform: translate(-50%, -50%);
+  animation-duration: .4s !important;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#popup-howto {
+  width: 100%;
+  max-width: 700px;
+}
+
+.popup-text {
+  text-align: center;
+  font-size: 17px;
+  color: white;
+  margin-bottom: 30px;
+  letter-spacing: 1.2px;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.2;
+}
+
+.popup-button {
+  width: 50px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: rgb(136,0, 145);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+}
+
+#popup-text_info {
+  text-align: center;
+  font-size: 17px;
+  color: white;
+  margin-bottom: 30px;
+  letter-spacing: 1.2px;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.2;
+}
+
+
+
+
+
+.section-wrapper {
+  background-color: rgba(60, 10, 111, 0.85);
+  backdrop-filter: blur(3px);
+  width: 900px;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  padding: 30px;
+  padding-bottom: 15px;
+  border-top: 1px solid #9800A2;
+}
+
+.transaction-popup-wrapper {
+  position: fixed;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0); /* Fallback color */
+  display: none;
+  background-color: rgba(0, 0, 0, 0.644); /* Black w/ opacity */
+}
+
+.transaction-popup {
+  padding: 30px;
+  padding-bottom: 15px;
+  width: auto;
+  height: auto;
+  position: absolute;
+  background-color: rgba(60, 10, 111, 1);
+  z-index: 15;
+  left: 50%;                  
+	top: 50%;
+  transform: translate(-50%, -50%);
+  animation-duration: .4s !important;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.transaction-popup-button {
+  width: 50px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: rgb(136,0, 145);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  display: none;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.status-text {
+  font-size: 17px;
+  letter-spacing: 1.2px;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.2;
+  color: rgb(99, 96, 96);
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+.active-status {
+  color: white;
+  font-weight: normal;
+  padding-bottom: 0px;
+}
+
+.dot-flashing {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #F02051;
+  color: #F02051;
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: .5s;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: none;
+}
+
+.active-flashing {
+  display: block;
+}
+
+.dot-flashing::before, .dot-flashing::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dot-flashing::before {
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #F02051;
+  color: #F02051;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+
+.dot-flashing::after {
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #F02051;
+  color: #F02051;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dotFlashing {
+  0% {
+    background-color: #F02051;
+  }
+  50%,
+  100% {
+    background-color: #ffffff;
+  }
+}
+
+
+
+
+.howto-button {
+  position: absolute;
+  z-index: 2;
+  padding-left: 10px;
+  padding-right: 10px;
+  right: 0;
+  margin-right: 30px;
+  border-radius: 5px;
+  border: 2px solid #9800A2;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.howto-button-text {
+  font-size: 17px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.howto-button:hover {
+  background-color: #9700a252;
+}
+
+.section-sub-heading {
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  z-index: 1;
+  position: relative;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  padding-top: 0px;
+  text-shadow: 0px 0px 8px #222;
+}
+
+.section-heading {
+  text-align: center;
+  color: white;
+  font-size: 26px;
+  letter-spacing: 1.3px;
+  font-weight: 600;
+  z-index: 1;
+  position: relative;
+  margin-bottom: 30px;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 0px 0px 8px #222;
+}
+
+.button-wrapper {
+  width: 380px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.tickets-wrapper {
+  padding: 30px;
+  padding-top: 0px;
+  text-align: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+.fas {
+  color: #F02051;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.prize-draw-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border: 1px solid #9800A2;
+  border-radius: 15px;
+}
+
+.prize-draw-header {
+  width: calc(100% - 30px);
+  border-bottom: 1px solid #9800A2;
+  padding: 15px;
+  background-color: #9700a252;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.prize-draw-header-section {
+  width: 32.5%;
+  text-align: center;
+  display: inline-block;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+}
+
+#prize-draw-header-section-center {
+  width: calc(35% - 2px);
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+#prize-draw-header-section-center-metamask {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+}
+
+.prize-draw-header_sm {
+  width: calc(100% - 30px);
+  border-bottom: 1px solid #9800A2;
+  padding: 15px;
+  background-color: #9700a252;
+  display: none;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.prize-draw-header-pool {
+  text-align: center;
+  padding-bottom: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: white;
+  border-bottom: 1px solid #9800A2;
+  margin-bottom: 12px;
+}
+
+.prize-draw-header-date {
+  width: 100%;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: white;
+}
+
+
+.prevWinner {
+  text-align: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+}
+
+.noMetaMask {
+  cursor: not-allowed !important;
+  opacity: .7;
+}
+
+.noMetaMask-input {
+  opacity: .7;
+  pointer-events: none;
+}
+
+.buy-section {
+  width: calc(40% - 80px);
+  padding: 40px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+}
+
+.prize-draw-image {
+  width: 60%;
+  height: auto;
+  display: inline-block;
+}
+
+.hidden-prize-draw-image {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+
+.buy-ticket-text {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.ticket-input {
+  width: 190px;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  color: white;
+  background-color: #9700a2ab;
+  border: none;
+}
+
+.ticket-input:focus {
+  outline: none !important;
+}
+
+.token-cost {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin-bottom: 35px;
+}
+
+.dollar-cost {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+
+.buy-tickets-button {
+  width: 190px;
+  height: auto;
+  text-align: center;
+  padding: 9px;
+  color: white;
+  background-color: #F02051;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+
+
+.admin-section {
+  position: relative;
+  z-index: 1;
+  width: 950px;
+  margin: 0 auto;
+  margin-top: 45px;
+  background-color: rgba(60, 10, 111, 0.85);
+  backdrop-filter: blur(3px);
+  padding: 20px;
+  border-top: 1px solid #9800A2;
+}
+
+
+.admin_button {
+  margin: 10px;
+  text-align: center;
+  padding: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: white;
+  background-color: #F02051;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 8px;
+  display: inline-block;
+  transition: all ease .3s;
+}
+
+.admin_input {
+  width: 150px;
+  padding: 12px;
+  margin-left: 10px;
+}
+
+.admin_submit {
+  margin-right: 10px;
+  text-align: center;
+  padding: 11px;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: white;
+  background-color: #F02051;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display: inline-block;
+  transition: all ease .3s;
+  position: relative;
+  top: -1px;
+}
+
+.input-wrapper {
+  display: inline-block
+}
+
+#blank_idle {
+  cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+  .main-section {
+    padding-bottom: 50px;
+  }
+
+  .section-wrapper {
+    width: 690px;
+    padding: 20px;
+  }
+
+  .howto-button {
+    margin-right: 20px;
+  }
+  
+  .buy-section {
+    width: 35%;
+    padding: 0px;
+    padding-top: 20px;
+  }
+  
+  .prize-draw-image {
+    width: 65%;
+  }
+  
+  .buy-ticket-text {
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-top: 12px;
+  }
+  
+  .ticket-input {
+    margin-bottom: 30px;
+    width: 160px;
+  }
+  
+  .dollar-cost {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .buy-tickets-button {
+    font-size: 15px;
+    width: 160px;
+  }
+  
+  .admin-section {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-wrapper {
+    width: 70%;
+    padding: 40px;
+  }
+
+  #popup-howto {
+    padding: 20px;
+    max-width: 400px;
+  }
+
+  .howto-button {
+    margin-right: 40px;
+  }
+
+  .prize-draw-header {
+    display: none;
+  }
+
+  .prize-draw-header_sm {
+    width: calc(100% - 30px);
+    padding: 15px;
+    display: block;
+  }
+
+  .prize-draw-image {
+    display: none;
+  }
+  
+  .hidden-prize-draw-image {
+    display: block;
+    width: calc(100% - 20px);
+    padding: 10px;
+  }
+
+  .buy-section {
+    width: 100%;
+    padding: 0px;
+    display: block;
+    position: relative;
+    top: -20px;
+  }
+  
+  .buy-ticket-text {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
+  
+  .ticket-input {
+    width: 190px;
+    padding: 15px;
+    margin-bottom: 35px;
+  }
+  
+  .dollar-cost {
+    font-size: 16px;
+    margin-bottom: 35px;
+  }
+  
+  .buy-tickets-button {
+    width: 190px;
+    padding: 11px;
+  }
+}
+
+@media (max-width: 550px) {
+  #popup-howto {
+    padding: 20px;
+    max-width: 1000px;
+    width: 70%;
+  }
+
+  #popup-info {
+    width: 70%;
+    padding: 20px;
+  }
+  
+  .popup-text {
+    font-size: 15px;
+    margin-bottom: 20px;
+    letter-spacing: 1.0px;
+    line-height: 1;
+  }
+  
+  .button-wrapper {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .tickets-wrapper {
+    padding-bottom: 25px;
+  }
+  
+  .fas {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  
+  .user {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    margin-left: 0px;
+    top: 0px;
+    overflow-wrap: break-word;
+  }
+
+  .section-wrapper {
+    width: calc(100% - 60px);
+    padding: 15px;
+  }
+
+  .howto-button {
+    margin-right: 15px;
+  }
+
+  .prize-draw-header_sm {
+    width: calc(100% - 20px);
+    padding: 10px;
+  }
+
+  .prize-draw-header-pool {
+    font-size: 13px;
+  }
+  
+  .prize-draw-header-date {
+    font-size: 13px;
+  }
+  
+  .buy-ticket-text {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .ticket-input {
+    width: 170px;
+    padding: 12px;
+    margin-bottom: 25px;
+  }
+  
+  .dollar-cost {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .buy-tickets-button {
+    width: 170px;
+    padding: 8px;
+    font-size: 14px;
+  }
+}
