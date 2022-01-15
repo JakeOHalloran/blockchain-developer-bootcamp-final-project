@@ -23,7 +23,7 @@ It may even promote more token buys, as people might see that there is 1000 of t
 http://jakeohalloran.com/FinalProject/
 
 ## Screencast - intro to the project
-
+http://jakeohalloran.com/video/screencast.webm
 
 ## Folder structure
 - `./client`: Front end application files (React application)
